@@ -88,7 +88,6 @@ h1 {
 .btn {
   display: block;
   width: 100%;
-  max-width: 200px;
   border-radius: 5rem;
   text-align: center;
   padding: 1.4rem 0.5rem;
@@ -96,16 +95,17 @@ h1 {
   color: var(--color-white);
   cursor: pointer;
   font-size: 1.6rem;
+
+  @media (min-width: 800px) {
+    max-width: 200px;
+  }
 }
 .btn--green {
   background-color: var(--color-strong-cyan);
   box-shadow: 0 2.5px #3b9e88;
 
   &:hover {
-    background-color: var(--color-light-blue);
-  }
-  &:active {
-    box-shadow: 0 0 #3b9e88;
+    background-color: #58c2ab;
   }
 }
 .btn--blue {
@@ -114,10 +114,6 @@ h1 {
 
   &:hover {
     background-color: #686ae9;
-  }
-
-  &:active {
-    box-shadow: 0 0 #595cda;
   }
 }
 .btn-container {
@@ -189,11 +185,13 @@ section {
   flex-direction: column;
   gap: 4.5rem;
   flex-basis: 40%;
+  align-items: center;
 
   @media (min-width: 800px) {
     justify-content: center;
     gap: 6rem;
     text-align: left;
+    align-items: flex-start;
   }
 }
 
@@ -202,14 +200,6 @@ section {
     width: 100%;
     max-width: 925px;
     margin: auto;
-  }
-}
-
-.third-sec__details__text {
-  align-items: center;
-
-  @media (min-width: ) {
-    
   }
 }
 
@@ -224,8 +214,23 @@ section {
   display: flex;
   flex-direction: column;
   gap: 3rem;
+  align-items: center;
+  justify-content: center;
+
+  @media (min-width: 800px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .details-icons {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
 
   .details__item {
+    flex-basis: 100%;
     img {
       margin: 3rem auto;
     }
@@ -237,17 +242,28 @@ section {
   flex-direction: column;
   align-items: center;
   gap: 6rem;
+  justify-content: space-between;
+
+  @media (min-width: 800px) {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0;
+  }
 }
 
 footer {
   width: 100%;
+  background-color: #f4f6f8;
+}
+.footer-container {
+  max-width: 1500px;
   margin: auto;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   gap: 3rem;
-  padding: 3rem;
-  background-color: #f4f6f8;
+  padding: 4rem;
 
   .logo-footer {
     width: 60px;
@@ -268,6 +284,24 @@ footer {
       }
     }
   }
+
+  @media (min-width: 800px) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 4rem;
+
+    .links {
+      flex-basis: 40%;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+      height: 65px;
+      justify-content: flex-start;
+      align-items: initial;
+    }
+  }
+  @media (min-width: 1550px) {
+    padding: 4rem 0;
+  }
 }
 
 .social-icons {
@@ -280,5 +314,10 @@ footer {
 
   a {
     color: inherit;
+  }
+
+  @media (min-width: 800px) {
+    margin: 0;
+    flex-basis: 150px;
   }
 }
